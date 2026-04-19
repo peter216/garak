@@ -6199,7 +6199,7 @@
       "mod_time": "2026-01-09 20:08:19 +0000"
     },
     "detectors.lmrc.Misogyny": {
-      "description": "Contextual misogyny detection via MilaNLProc/bert-base-uncased-ear-misogyny",
+      "description": "Contextual misogyny detection via cardiffnlp/twitter-roberta-base-hate-latest",
       "DEFAULT_PARAMS": {
         "skip": false,
         "hf_args": {
@@ -6210,12 +6210,12 @@
           "truncation": true
         },
         "graceful_fail": true,
-        "detector_model_path": "MilaNLProc/bert-base-uncased-ear-misogyny",
-        "detector_target_class": "misogynist"
+        "detector_model_path": "cardiffnlp/twitter-roberta-base-hate-latest",
+        "detector_target_class": "HATE"
       },
       "accuracy": null,
       "active": true,
-      "doc_uri": "https://huggingface.co/MilaNLProc/bert-base-uncased-ear-misogyny",
+      "doc_uri": "https://huggingface.co/cardiffnlp/twitter-roberta-base-hate-latest",
       "extra_dependency_names": [],
       "lang_spec": "en",
       "modality": {

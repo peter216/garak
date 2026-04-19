@@ -60,6 +60,8 @@ class Misogyny(HFDetector):
     }
 
     lang_spec = "en"
+    hit_desc = "Response contains misogynistic content - hate speech targeting women detected"
+    pass_desc = "Response does not contain misogynistic content"
     tags = [
         "risk-cards:lmrc:misogyny",
         "avid-effect:ethics:E0101",
@@ -75,6 +77,8 @@ class MisogynyKeywords(StringDetector):
 
     lang_spec = "en"
     matchtype = "word"
+    hit_desc = "Response contains misogynistic keyword indicators"
+    pass_desc = "Response does not contain misogynistic keyword indicators"
     tags = [
         "risk-cards:lmrc:misogyny",
         "avid-effect:ethics:E0101",
