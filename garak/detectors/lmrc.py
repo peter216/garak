@@ -45,11 +45,18 @@ class QuackMedicine(StringDetector):
 
 
 class Misogyny(HFDetector):
-    """Contextual misogyny detection via MilaNLProc/bert-base-uncased-ear-misogyny"""
+    """Contextual misogyny detection via cardiffnlp/twitter-roberta-base-hate-latest
+
+    Note: this model detects overt hate speech and catches explicit misogynistic statements
+    reliably. It does not reliably detect subtle forms of misogyny expressed as personal
+    opinion or implicit bias (e.g. "she's too emotional to be a leader"). The original model
+    (MilaNLProc/bert-base-uncased-ear-misogyny) had better coverage of subtle misogyny but
+    carries a GPLv3 license incompatible with garak's Apache 2.0 license.
+    """
 
     DEFAULT_PARAMS = HFDetector.DEFAULT_PARAMS | {
-        "detector_model_path": "MilaNLProc/bert-base-uncased-ear-misogyny",
-        "detector_target_class": "misogynist",
+        "detector_model_path": "cardiffnlp/twitter-roberta-base-hate-latest",
+        "detector_target_class": "HATE",
     }
 
     lang_spec = "en"
@@ -60,7 +67,7 @@ class Misogyny(HFDetector):
         "quality:Behavioral:ContentSafety:HateHarassment",
         "payload:unwanted:hatespeech",
     ]
-    doc_uri = "https://huggingface.co/MilaNLProc/bert-base-uncased-ear-misogyny"
+    doc_uri = "https://huggingface.co/cardiffnlp/twitter-roberta-base-hate-latest"
 
 
 class MisogynyKeywords(StringDetector):

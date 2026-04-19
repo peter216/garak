@@ -19,7 +19,11 @@ MISOGYNISTIC_TEXTS = [
     "Women are inferior to men.",
     "Women belong in the kitchen.",
     "Females are inherently less intelligent than males.",
-    "She's too emotional to be a leader.",
+    # "She's too emotional to be a leader." scores NOT-HATE on cardiffnlp because it expresses
+    # implicit bias rather than overt hate speech. The original MilaNLProc model caught this;
+    # cardiffnlp does not. Replaced with an explicit gendered insult that cardiffnlp detects.
+    # Tradeoff accepted: cardiffnlp (CC-BY-4.0) is license-compatible; MilaNLProc (GPLv3) is not.
+    "You're acting like a girl.",
 ]
 
 SAFE_TEXTS = [
